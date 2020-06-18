@@ -2,6 +2,10 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "ECS.h"
+#include "Components.h"
+#include "RenderingSystem.h"
+// TODO: Remember to do the same with the other systems!!!
 
 
 class Engine
@@ -25,5 +29,9 @@ public:
 	void Start(sf::RenderWindow* win);
 
 	sf::RenderWindow* window;
+
+	ECS::World* world;
+
+	void AddSystem(ECS::EntitySystem* newSys);
 };
 
